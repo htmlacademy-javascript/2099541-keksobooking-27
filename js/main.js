@@ -1,4 +1,4 @@
-const randomInteger = function (min, max) {
+const showRandInteger = (min, max) => {
   let rand;
   if (min >= 0 && max >= 0) {
     rand = min - 0.5 + Math.random() * (max - min + 1);
@@ -9,9 +9,9 @@ const randomInteger = function (min, max) {
   return Math.round(rand);
 };
 
-randomInteger(1, 4);
+showRandInteger(1, 4);
 
-const randIntegerWithDePo = function (min, max, digitsADP) {
+const showRandIntegerWithDePo = (min, max, digitsADP) => {
   let rand;
   if (min >= 0 && max >= 0) {
     rand = min - 0.5 + Math.random() * (max - min + 1);
@@ -22,4 +22,4 @@ const randIntegerWithDePo = function (min, max, digitsADP) {
   return rand.toFixed(digitsADP);
 };
 
-randIntegerWithDePo(1, 4, 2);
+showRandIntegerWithDePo(1, 4, 2);
