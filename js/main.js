@@ -66,38 +66,41 @@ const varPhotos = ['https://assets.htmlacademy.ru/content/intensive/javascript-1
 
 const addressIndex = `${showRandIntegerWithDePo(35.65000, 35.70000, 5)}, ${ showRandIntegerWithDePo(139.70000, 139.80000, 5)}`;
 
-for (let i = 0; i < 10; i++) {
-  const createObject = () => {
-    const author = {
-      avatar: createAvatarIndex()
-    };
+const similarObjectCount = 10;
 
-    const offer = {
-      title: 'Сдам помещение',
-      address: addressIndex,
-      price: showRandInteger(1, 100),
-      type: showArrayRand(typeOfOffer),
-      rooms: showRandInteger(1, 100),
-      guests: showRandInteger(1, 100),
-      checkin: showArrayRand(timeOfCheck),
-      checkout: showArrayRand(timeOfCheck),
-      features: getArray(varFeatures),
-      description: 'Ухоженное помещение, сдается на долгий срок',
-      photos: getArray(varPhotos),
-    };
-
-    const location = {
-      lat: showRandIntegerWithDePo(35.65000, 35.70000, 5),
-      lng: showRandIntegerWithDePo(139.70000, 139.80000, 5),
-    };
-
-    return {
-      author,
-      offer,
-      location,
-    };
-
+const createObject = () => {
+  const author = {
+    avatar: createAvatarIndex()
   };
-  // eslint-disable-next-line no-console
-  console.log(createObject());
-}
+
+  const offer = {
+    title: 'Сдам помещение',
+    address: addressIndex,
+    price: showRandInteger(1, 100),
+    type: showArrayRand(typeOfOffer),
+    rooms: showRandInteger(1, 100),
+    guests: showRandInteger(1, 100),
+    checkin: showArrayRand(timeOfCheck),
+    checkout: showArrayRand(timeOfCheck),
+    features: getArray(varFeatures),
+    description: 'Ухоженное помещение, сдается на долгий срок',
+    photos: getArray(varPhotos),
+  };
+
+  const location = {
+    lat: showRandIntegerWithDePo(35.65000, 35.70000, 5),
+    lng: showRandIntegerWithDePo(139.70000, 139.80000, 5),
+  };
+
+  return {
+    author,
+    offer,
+    location,
+  };
+};
+
+const similarObject = Array.from({length: similarObjectCount}, createObject);
+
+// eslint-disable-next-line no-console
+console.log(similarObject);
+
